@@ -121,6 +121,10 @@ var actions = {
   lockMetamask: lockMetamask,
   MARK_UNENCRYPTED: 'MARK_UNENCRYPTED',
   checkUnencrypted: checkUnencrypted,
+  SET_CASHACCOUNT: 'SET_CASHACCOUNT',
+  SET_CASHACCOUNT_REGISTRATION: 'SET_CASHACCOUNT_REGISTRATION',
+  setCashAccount: setCashAccount,
+  setCashAccountRegistration: setCashAccountRegistration,
 
   unlockInProgress: unlockInProgress,
   // error handling
@@ -508,6 +512,20 @@ function checkUnencrypted () {
         resolve()
       })
     })
+  }
+}
+
+function setCashAccount (account) {
+  return {
+    type: actions.SET_CASHACCOUNT,
+    value: account,
+  }
+}
+
+function setCashAccountRegistration (account) {
+  return {
+    type: actions.SET_CASHACCOUNT_REGISTRATION,
+    value: account,
   }
 }
 
